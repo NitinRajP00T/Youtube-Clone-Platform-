@@ -28,6 +28,7 @@ app.post("/", (req, res) => {
   console.log("url", req.url);
   console.log("header", req.headers);
   res.send("data recived");
+  console.log("USER:", req.user);
 });
 
 // Handle unhandled rejections

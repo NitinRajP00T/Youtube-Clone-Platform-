@@ -164,11 +164,14 @@ exports.googleAuthCallback = catchAsync(async (req, res, next) => {
   if (!req.user) {
     return next(new AppError("Google Authentication Failed", 401));
   }
-  
+
   // Sign JWT
   const token = signToken(req.user._id);
 
   // Send token back to frontend in a redirect so the React app can pick it up
-  const frontendUrl = process.env.FRONTEND_URL || "http://localhost:5173";
+  const frontendUrl = (
+    process.env.FRONTEND_URL || "http://localhost:5173"
+  ).replace(/\/$/, "");
+
   res.redirect(`${frontendUrl}/google-callback?token=${token}`);
 });
