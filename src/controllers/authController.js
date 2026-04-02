@@ -20,6 +20,7 @@ const createSendToken = (user, statusCode, res) => {
 
   // Remove password from output
   user.password = undefined;
+  console.log("user data by the createSentToken  Function", user);
 
   res.status(statusCode).json({
     status: "success",
@@ -100,7 +101,8 @@ exports.login = catchAsync(async (req, res, next) => {
   const user = await User.findOne({ email })
     .select("+password")
     .populate("channel");
-  console.log("password", password, "user.password", user.password);
+  // console.log("password", password, "user.password", user.password);
+  // console.log("CHANNEL ", user.channel);
   // if (!user || !(await user.correctPassword(password, user.password))) {
   //   return next(new AppError("Incorrect email or password", 401));
   // }

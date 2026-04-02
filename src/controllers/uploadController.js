@@ -7,17 +7,21 @@ exports.uploadFile = catchAsync(async (req, res, next) => {
         return next(new AppError('Please upload a file.', 400));
     }
 
-    // Optionally determine folder based on file type
+    console.log('📁 Upload request received:', {
+        originalname: req.file.originalname,
+        mimetype: req.file.mimetype,
+        size: req.file.size,
+        hasBuffer: !!req.file.buffer,
+        bufferLength: req.file.buffer?.length
+    });
+
+    // Determine folder based on file type
     const folder = req.file.mimetype.startsWith('video') ? 'videos' : 'images';
-    
-    let url;
-    try {
-        url = await s3Service.uploadFile(req.file, folder);
-    } catch (error) {
-        // Fallback for local development if S3 is not configured
-        console.warn(`S3 Upload failed: ${error.message}. Returning mock URL.`);
-        url = `http://localhost:5000/mock-${folder}/${req.file.originalname}`;
-    }
+
+    // Upload to S3 — let errors propagate so we know the real issue
+    const url = await s3Service.uploadFile(req.file, folder);
+
+    console.log('✅ S3 Upload successful:', url);
 
     res.status(200).json({
         status: 'success',
