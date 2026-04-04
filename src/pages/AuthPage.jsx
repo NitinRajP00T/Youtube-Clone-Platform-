@@ -45,26 +45,26 @@ const AuthPage = () => {
     // };
 
     return (
-        <div className="min-h-screen bg-[#0f0f0f] flex items-center justify-center p-4">
-            <div className="bg-[#0f0f0f] w-full max-w-[450px] border border-[#3f3f3f] rounded-lg p-10 flex flex-col items-center">
+        <div className="min-h-screen bg-white dark:bg-[#0f0f0f] flex items-center justify-center p-4 transition-colors">
+            <div className="bg-white dark:bg-[#0f0f0f] w-full max-w-[450px] border border-gray-300 dark:border-[#3f3f3f] rounded-lg p-10 flex flex-col items-center transition-colors">
                 {/* Google / YouTube Style Logo Space */}
                 <div className="mb-4">
                     <svg height="24" viewBox="0 0 90 20" width="90" xmlns="http://www.w3.org/2000/svg">
                         <path d="m27.9727 3.12324c-2.7681-.50244-12.7937-.50244-15.5619 0-2.3831.42909-4.2343 2.50296-4.6644 4.88145-.5121 2.89431-.5121 9.09631 0 11.99061.4301 2.3785 2.2813 4.4524 4.6644 4.8815 2.7682.5024 12.7938.5024 15.5619 0 2.3832-.4291 4.2343-2.503 4.6644-4.8815.5122-2.8943.5122-9.0963 0-11.99061-.4301-2.37849-2.2812-4.45236-4.6644-4.88145zm-10.3644 14.16786v-9.5822l8.8093 4.7911z" fill="#f00" transform="translate(-7.7464 -2.5)"/>
-                        <path d="m42.5317 21.082v-14.7876l3.5e-3 -1.35332h3.2921l.2407 2.05942h.086c.8664-1.57946 2.4552-2.5292 4.2955-2.5292 2.9125 0 4.153 1.99612 4.153 5.48002v11.1307h-3.4111v-10.7042c0-2.0722-.5335-3.0805-2.0169-3.0805-1.1895 0-2.31.761-2.8797 1.8488v11.9359zm18.8471-15.0116h-3.411l-2.07 7.7915c-.5697 2.0721-1.0186 3.8643-1.2721 5.3857h-.0861c-.2535-1.5594-.6826-3.3516-1.2908-5.3857l-2.1883-7.7915h-3.5298l4.8966 14.7876v6.417h3.4111v-6.417zm6.7323 15.1923c-3.6649 0-4.6946-2.5835-4.6946-6.8407v-2.094c0-4.44453 1.2589-6.96022 4.8149-6.96022 3.5152 0 4.5126 2.38883 4.5126 6.96022v2.094c0 4.312-.9774 6.8407-4.6329 6.8407zm0-2.6186c.928 0 1.1687-1.2828 1.1687-3.8016v-2.8242c0-2.404-.2606-3.7025-1.1687-3.7025-.8779 0-1.1485 1.2985-1.1485 3.7025v2.8242c0 2.5414.2505 3.8016 1.1485 3.8016zm12.6322-12.8087v15.2284h-2.7317l-.3171-2.2612h-.0835c-.7184 1.4883-2.1287 2.4795-3.8015 2.4795-2.5905 0-3.6121-1.8596-3.6121-5.698v-9.7487h3.4001v9.3339c0 1.9304.421 2.8094 1.7062 2.8094.9928 0 1.9332-.6471 2.3275-1.5794v-10.5639zm8.5639-2.31174h3.4111v17.32334h-3.4111zv-17.32334h-3.411v17.32334h3.411zm11.1648 10.15814c0 3.8969-.8725 7.1528-4.7042 7.1528-1.7451 0-3.3218-.8882-4.0539-2.2813h-.0861v2.1001l-3.2921.0336v-24.62933h3.411v8.59123c.6917-1.1664 2.1158-1.93482 3.7635-1.93482 3.6514 0 4.9618 2.87162 4.9618 7.07902zm-3.4111-.334c0-2.6976-.3209-4.2269-1.4238-4.2269-.9729 0-1.9149.6644-2.3168 1.6373v6.3364c.361.6429 1.1534 1.0533 1.9358 1.0533 1.183 0 1.8048-1.4893 1.8048-4.8001z" fill="#fff" transform="translate(-7.7464 -2.5)"/>
+                        <path className="fill-black dark:fill-white" d="m42.5317 21.082v-14.7876l3.5e-3 -1.35332h3.2921l.2407 2.05942h.086c.8664-1.57946 2.4552-2.5292 4.2955-2.5292 2.9125 0 4.153 1.99612 4.153 5.48002v11.1307h-3.4111v-10.7042c0-2.0722-.5335-3.0805-2.0169-3.0805-1.1895 0-2.31.761-2.8797 1.8488v11.9359zm18.8471-15.0116h-3.411l-2.07 7.7915c-.5697 2.0721-1.0186 3.8643-1.2721 5.3857h-.0861c-.2535-1.5594-.6826-3.3516-1.2908-5.3857l-2.1883-7.7915h-3.5298l4.8966 14.7876v6.417h3.4111v-6.417zm6.7323 15.1923c-3.6649 0-4.6946-2.5835-4.6946-6.8407v-2.094c0-4.44453 1.2589-6.96022 4.8149-6.96022 3.5152 0 4.5126 2.38883 4.5126 6.96022v2.094c0 4.312-.9774 6.8407-4.6329 6.8407zm0-2.6186c.928 0 1.1687-1.2828 1.1687-3.8016v-2.8242c0-2.404-.2606-3.7025-1.1687-3.7025-.8779 0-1.1485 1.2985-1.1485 3.7025v2.8242c0 2.5414.2505 3.8016 1.1485 3.8016zm12.6322-12.8087v15.2284h-2.7317l-.3171-2.2612h-.0835c-.7184 1.4883-2.1287 2.4795-3.8015 2.4795-2.5905 0-3.6121-1.8596-3.6121-5.698v-9.7487h3.4001v9.3339c0 1.9304.421 2.8094 1.7062 2.8094.9928 0 1.9332-.6471 2.3275-1.5794v-10.5639zm8.5639-2.31174h3.4111v17.32334h-3.4111zv-17.32334h-3.411v17.32334h3.411zm11.1648 10.15814c0 3.8969-.8725 7.1528-4.7042 7.1528-1.7451 0-3.3218-.8882-4.0539-2.2813h-.0861v2.1001l-3.2921.0336v-24.62933h3.411v8.59123c.6917-1.1664 2.1158-1.93482 3.7635-1.93482 3.6514 0 4.9618 2.87162 4.9618 7.07902zm-3.4111-.334c0-2.6976-.3209-4.2269-1.4238-4.2269-.9729 0-1.9149.6644-2.3168 1.6373v6.3364c.361.6429 1.1534 1.0533 1.9358 1.0533 1.183 0 1.8048-1.4893 1.8048-4.8001z" transform="translate(-7.7464 -2.5)"/>
                     </svg>
                 </div>
                 
-                <h1 className="text-2xl font-normal text-[#f1f1f1] mb-2">
+                <h1 className="text-2xl font-normal text-black dark:text-[#f1f1f1] mb-2">
                     {isLogin ? 'Sign in' : 'Create a YouTube Account'}
                 </h1>
-                <p className="text-[#aaaaaa] mb-8 text-[15px]">
+                <p className="text-gray-600 dark:text-[#aaaaaa] mb-8 text-[15px]">
                     to continue to YouTube
                 </p>
 
                 <div className="w-full">
                     {error && (
-                        <div className="bg-[#422020] border-l-4 border-red-500 text-[#f1f1f1] p-3 mb-6 text-sm rounded-r">
+                        <div className="bg-red-50 dark:bg-[#422020] border-l-4 border-red-500 text-red-600 dark:text-[#f1f1f1] p-3 mb-6 text-sm rounded-r">
                             {error}
                         </div>
                     )}
@@ -80,11 +80,11 @@ const AuthPage = () => {
                                     value={formData.username}
                                     onChange={handleChange}
                                     required
-                                    className="block px-3.5 pb-2.5 pt-5 w-full text-sm text-[#f1f1f1] bg-transparent rounded-md border border-[#555] appearance-none focus:outline-none focus:ring-0 focus:border-[#3ea6ff] peer"
+                                    className="block px-3.5 pb-2.5 pt-5 w-full text-sm text-black dark:text-[#f1f1f1] bg-transparent rounded-md border border-gray-300 dark:border-[#555] appearance-none focus:outline-none focus:ring-0 focus:border-blue-500 dark:focus:border-[#3ea6ff] peer transition-colors"
                                 />
                                 <label 
                                     htmlFor="username" 
-                                    className="absolute text-[#aaaaaa] duration-200 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-3.5 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 peer-focus:text-[#3ea6ff]"
+                                    className="absolute text-gray-500 dark:text-[#aaaaaa] duration-200 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-3.5 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 peer-focus:text-blue-500 dark:peer-focus:text-[#3ea6ff]"
                                 >
                                     Username
                                 </label>
@@ -99,11 +99,11 @@ const AuthPage = () => {
                                 value={formData.email}
                                 onChange={handleChange}
                                 required
-                                className="block px-3.5 pb-2.5 pt-5 w-full text-sm text-[#f1f1f1] bg-transparent rounded-md border border-[#555] appearance-none focus:outline-none focus:ring-0 focus:border-[#3ea6ff] peer"
+                                className="block px-3.5 pb-2.5 pt-5 w-full text-sm text-black dark:text-[#f1f1f1] bg-transparent rounded-md border border-gray-300 dark:border-[#555] appearance-none focus:outline-none focus:ring-0 focus:border-blue-500 dark:focus:border-[#3ea6ff] peer transition-colors"
                             />
                             <label 
                                 htmlFor="email" 
-                                className="absolute text-[#aaaaaa] duration-200 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-3.5 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 peer-focus:text-[#3ea6ff]"
+                                className="absolute text-gray-500 dark:text-[#aaaaaa] duration-200 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-3.5 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 peer-focus:text-blue-500 dark:peer-focus:text-[#3ea6ff]"
                             >
                                 Email or phone
                             </label>
@@ -118,25 +118,25 @@ const AuthPage = () => {
                                 onChange={handleChange}
                                 required
                                 minLength={6}
-                                className="block px-3.5 pb-2.5 pt-5 w-full text-sm text-[#f1f1f1] bg-transparent rounded-md border border-[#555] appearance-none focus:outline-none focus:ring-0 focus:border-[#3ea6ff] peer"
+                                className="block px-3.5 pb-2.5 pt-5 w-full text-sm text-black dark:text-[#f1f1f1] bg-transparent rounded-md border border-gray-300 dark:border-[#555] appearance-none focus:outline-none focus:ring-0 focus:border-blue-500 dark:focus:border-[#3ea6ff] peer transition-colors"
                             />
                             <label 
                                 htmlFor="password" 
-                                className="absolute text-[#aaaaaa] duration-200 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-3.5 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 peer-focus:text-[#3ea6ff]"
+                                className="absolute text-gray-500 dark:text-[#aaaaaa] duration-200 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-3.5 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 peer-focus:text-blue-500 dark:peer-focus:text-[#3ea6ff]"
                             >
                                 Enter your password
                             </label>
                         </div>
                         
                         {!isLogin && (
-                            <p className="text-[12px] text-[#aaaaaa] mt-[-10px] ml-1">
+                            <p className="text-[12px] text-gray-500 dark:text-[#aaaaaa] mt-[-10px] ml-1">
                                 Use 8 or more characters with a mix of letters, numbers & symbols
                             </p>
                         )}
 
                         <div className="text-sm mt-2">
-                            <span className="text-[#aaaaaa] mr-1">Not your computer? Use Guest mode to sign in privately. </span>
-                            <button type="button" className="text-[#3ea6ff] hover:underline hover:text-[#71bbfc] font-medium bg-transparent border-none p-0 cursor-pointer">
+                            <span className="text-gray-600 dark:text-[#aaaaaa] mr-1">Not your computer? Use Guest mode to sign in privately. </span>
+                            <button type="button" className="text-blue-600 dark:text-[#3ea6ff] hover:underline focus:outline-none font-medium bg-transparent border-none p-0 cursor-pointer">
                                 Learn more about using Guest mode
                             </button>
                         </div>
@@ -149,14 +149,14 @@ const AuthPage = () => {
                                     dispatch(loginFailure(null));
                                     setFormData({ username: '', email: '', password: '' });
                                 }} 
-                                className="text-[#3ea6ff] hover:bg-[#263850] px-4 py-2 rounded-full font-medium text-sm transition-colors"
+                                className="text-blue-600 dark:text-[#3ea6ff] hover:bg-blue-50 dark:hover:bg-[#263850] px-4 py-2 rounded-full font-medium text-sm transition-colors"
                             >
                                 {isLogin ? 'Create account' : 'Sign in instead'}
                             </button>
                             <button 
                                 type="submit" 
                                 disabled={loading}
-                                className="bg-[#3ea6ff] hover:bg-[#65b8ff] disabled:bg-[#3ea6ff]/50 disabled:text-[#0f0f0f]/50 text-[#0f0f0f] font-medium px-6 py-2 rounded-full text-sm transition-colors"
+                                className="bg-blue-600 dark:bg-[#3ea6ff] hover:bg-blue-700 dark:hover:bg-[#65b8ff] disabled:opacity-50 text-white dark:text-[#0f0f0f] font-medium px-6 py-2 rounded-full text-sm transition-colors"
                             >
                                 {loading ? 'Next...' : 'Next'}
                             </button>
@@ -165,9 +165,9 @@ const AuthPage = () => {
 
                     <div className="mt-8 w-full">
                         <div className="flex items-center w-full mb-6">
-                            <div className="flex-grow border-t border-[#3f3f3f]"></div>
-                            <span className="px-4 text-[#aaaaaa] text-sm">or</span>
-                            <div className="flex-grow border-t border-[#3f3f3f]"></div>
+                            <div className="flex-grow border-t border-gray-300 dark:border-[#3f3f3f]"></div>
+                            <span className="px-4 text-gray-500 dark:text-[#aaaaaa] text-sm">or</span>
+                            <div className="flex-grow border-t border-gray-300 dark:border-[#3f3f3f]"></div>
                         </div>
                         
                         <div className="flex justify-center w-full">
@@ -182,7 +182,7 @@ const AuthPage = () => {
                             /> */}
                             <a
                                 href={`${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/auth/google`}
-                                className="flex items-center justify-center gap-2 bg-white text-black rounded-full px-6 py-3 w-[300px] hover:bg-gray-200 transition-colors font-medium cursor-pointer max-w-full"
+                                className="flex items-center justify-center gap-2 bg-white text-black border border-gray-300 rounded-full px-6 py-3 w-[300px] hover:bg-gray-50 dark:hover:bg-gray-200 transition-colors font-medium cursor-pointer max-w-full"
                             >
                                 <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
@@ -197,10 +197,10 @@ const AuthPage = () => {
                 </div>
             </div>
             {/* Footer links typical of Google login */}
-            <div className="fixed bottom-0 left-0 right-0 p-4 flex justify-center text-[12px] text-[#aaaaaa] gap-6 bg-[#0f0f0f]">
-                <button className="hover:bg-[#272727] px-2 py-1 rounded">Help</button>
-                <button className="hover:bg-[#272727] px-2 py-1 rounded">Privacy</button>
-                <button className="hover:bg-[#272727] px-2 py-1 rounded">Terms</button>
+            <div className="fixed bottom-0 left-0 right-0 p-4 flex justify-center text-[12px] text-gray-500 dark:text-[#aaaaaa] gap-6 bg-white dark:bg-[#0f0f0f] transition-colors">
+                <button className="hover:bg-gray-100 dark:hover:bg-[#272727] px-2 py-1 rounded transition-colors">Help</button>
+                <button className="hover:bg-gray-100 dark:hover:bg-[#272727] px-2 py-1 rounded transition-colors">Privacy</button>
+                <button className="hover:bg-gray-100 dark:hover:bg-[#272727] px-2 py-1 rounded transition-colors">Terms</button>
             </div>
         </div>
     );

@@ -1,24 +1,24 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import Header from './components/common/Header';
-import Sidebar from './components/common/Sidebar';
-import HomePage from './pages/HomePage';
-import VideoPage from './pages/VideoPage';
-import ChannelPage from './pages/ChannelPage';
-import AuthPage from './pages/AuthPage';
-import UploadPage from './pages/UploadPage';
-import GoogleCallback from './pages/GoogleCallback';
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useSelector } from "react-redux";
+import Header from "./components/common/Header";
+import Sidebar from "./components/common/Sidebar";
+import HomePage from "./pages/HomePage";
+import VideoPage from "./pages/VideoPage";
+import ChannelPage from "./pages/ChannelPage";
+import AuthPage from "./pages/AuthPage";
+import UploadPage from "./pages/UploadPage";
+import GoogleCallback from "./pages/GoogleCallback";
 
 function App() {
   const { theme } = useSelector((state) => state.theme);
 
   useEffect(() => {
     const root = document.documentElement;
-    if (theme === 'dark') {
-      root.classList.add('dark');
+    if (theme === "dark") {
+      root.classList.add("dark");
     } else {
-      root.classList.remove('dark');
+      root.classList.remove("dark");
     }
   }, [theme]);
 
@@ -35,7 +35,8 @@ function App() {
               <Route path="/google-callback" element={<GoogleCallback />} />
               <Route path="/upload" element={<UploadPage />} />
               <Route path="/video/:videoId" element={<VideoPage />} />
-              <Route path="/channel/:channelId" element={<ChannelPage />} />
+              {/* <Route path="/channel/:channelId" element={<ChannelPage />} /> */}
+              <Route path="/channel/:userId" element={<ChannelPage />} />
             </Routes>
           </main>
         </div>
