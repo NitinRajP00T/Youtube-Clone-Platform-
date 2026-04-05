@@ -7,10 +7,11 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import { videoAPI, commentAPI } from "../services/api";
 import VideoCard from "../components/common/VideoCard";
 import Skeleton from "@mui/material/Skeleton";
+import { useNavigate } from "react-router-dom";
 
 dayjs.extend(relativeTime);
-
 const VideoPage = () => {
+  const navigate = useNavigate();
   const { videoId } = useParams();
   const [video, setVideo] = useState(null);
   const [comments, setComments] = useState([]);
@@ -47,6 +48,13 @@ const VideoPage = () => {
     };
     fetchVideoData();
   }, [videoId]);
+
+  const handleClickOnVideoChannel = async () => {
+    const userId = video?.channel?.owner?._id || video?.channel?.owner;
+    if (userId) {
+      navigate(`/channel/u/${userId}`);
+    }
+  };
 
   const handleLike = async () => {
     if (!isAuthenticated) return alert("Please sign in to like");
@@ -201,8 +209,8 @@ const VideoPage = () => {
         <h1 className="text-xl font-bold mt-4 tracking-tight">{video.title}</h1>
         <div className="flex flex-col sm:flex-row sm:items-center justify-between mt-3 gap-4">
           <div className="flex items-center gap-4">
-            <Link
-              to={`/channel/${video.channel?._id}`}
+            <button
+              onClick={handleClickOnVideoChannel}
               className="flex items-center gap-3"
             >
               <div className="w-10 h-10 bg-gray-600 rounded-full flex justify-center items-center font-bold">
@@ -216,7 +224,7 @@ const VideoPage = () => {
                   {video.channel?.subscribers || 0} subscribers
                 </p>
               </div>
-            </Link>
+            </button>
             <button className="bg-white text-black px-4 py-2 rounded-full font-medium text-sm hover:bg-gray-200 transition-colors">
               Subscribe
             </button>
