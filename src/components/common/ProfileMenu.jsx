@@ -88,9 +88,9 @@ const ProfileMenu = () => {
   };
 
   const handleViewYourChannel = () => {
-    // const userId = user?.userId; // channel finding by the userId
+    console.log("handle your channel se userId", userId); // channel finding by the userId
 
-    navigate(`/channel/${userId}`);
+    navigate(`/channel/u/${userId}`);
     setIsOpen(false);
   };
 

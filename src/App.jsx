@@ -36,7 +36,7 @@ function App() {
               <Route path="/upload" element={<UploadPage />} />
               <Route path="/video/:videoId" element={<VideoPage />} />
               {/* <Route path="/channel/:channelId" element={<ChannelPage />} /> */}
-              <Route path="/channel/:userId" element={<ChannelPage />} />
+              <Route path="/channel/u/:userId" element={<ChannelPage />} />
             </Routes>
           </main>
         </div>

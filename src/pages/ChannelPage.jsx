@@ -6,12 +6,13 @@ import { useDispatch } from "react-redux";
 import { setUser } from "../redux/slices/authSlice";
 
 const ChannelPage = () => {
-  //   const { channelId } = useParams();
   const { userId } = useParams();
   const [channel, setChannel] = useState(null);
   const [videos, setVideos] = useState([]);
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
+
+  // const { type, id } = useParams();
 
   useEffect(() => {
     const fetchChannel = async () => {
@@ -20,7 +21,13 @@ const ChannelPage = () => {
         if (userId === "create") return setLoading(false);
 
         // const res = await channelAPI.getById(channelId);
+        console.log("user param id '", userId);
         const res = await channelAPI.getByUserId(userId);
+        let channelId = res.data?.data?.channel?._id;
+        console.log("channelId", channelId);
+        // console.log("  log the channelpage", res.data.data.channel._id);
+        // let channelId = res.data;
+
         setChannel(res.data.data.channel);
 
         const vidRes = await videoAPI.getAll({ limit: 100 });
